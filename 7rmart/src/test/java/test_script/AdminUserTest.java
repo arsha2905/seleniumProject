@@ -67,5 +67,5 @@ public class AdminUserTest extends Base{
 	public Object[][] getDataFromTestData() throws IOException{
 		return new Object[][] {{ExcelUtility.getStringData(1, 0,"loginpage"),ExcelUtility.getStringData(1,1,"loginpage")}};
 	}
-	//test commit
+	
 }
