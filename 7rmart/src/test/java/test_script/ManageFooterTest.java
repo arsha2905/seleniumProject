@@ -10,13 +10,13 @@ import pages.ManageFooterPage;
 import utilities.ExcelUtility;
 
 public class ManageFooterTest extends Base {
-	@Test
+	@Test(description="Verify that user can create manage footer text successfully")
 	public void verifyThatUserCanCreateManageFooterTextSuccessfully() throws IOException {
 		String usernamevalue = ExcelUtility.getStringData(1, 0, "Login_Page");
 		String passwordvalue = ExcelUtility.getStringData(1, 1, "Login_Page");
 		String address = ExcelUtility.getStringData(1, 0, "Manage_Footer");
 		String email = ExcelUtility.getStringData(1, 1, "Manage_Footer");
-	String phonenum = ExcelUtility.getIntegerData(1, 2, "Manage_Footer");
+	    String phonenum = ExcelUtility.getIntegerData(1, 2, "Manage_Footer");
 
 		LoginPage loginpage = new LoginPage(driver);
 		loginpage.enterUsername(usernamevalue);
@@ -34,7 +34,7 @@ public class ManageFooterTest extends Base {
 		Assert.assertTrue(isAlertMessageDisplayed);
 	}
 	
-	@Test
+	@Test(retryAnalyzer=retry.Retry.class,description="Verify whether update button is displayed")
 	public void verifyWhetherUpdateButtonIsDisplayed() throws IOException {
 		String usernamevalue = ExcelUtility.getStringData(1, 0, "Login_Page");
 		String passwordvalue = ExcelUtility.getStringData(1, 1, "Login_Page");

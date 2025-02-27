@@ -1,9 +1,18 @@
 package pages;
 
+import java.time.Duration;
+import java.util.NoSuchElementException;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.Wait;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import utilities.WaitUtility;
 
 public class LoginPage {
 	WebDriver driver;
@@ -33,7 +42,20 @@ public class LoginPage {
 	}
 
 	public void clickOnSigninButton() {
-		submit.click();
+		//WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		//wait.until(ExpectedConditions.elementToBeClickable(submit));//explicit wait
+		//submit.click();
+		
+		//Wait<WebDriver> fluentWait = new FluentWait<WebDriver>(driver)
+		//.withTimeout(Duration.ofSeconds(30))
+		//		.pollingEvery(Duration.ofSeconds(5))
+		//		.ignoring(NoSuchElementException.class);
+		//		fluentWait.until(ExpectedConditions.elementToBeClickable(submit));//Webelementname=submit
+		//		submit.click();//fluent wait
+		
+		 WaitUtility waitutility=new  WaitUtility();
+		 waitutility.waitForClick(driver, submit);
+		 submit.click();
 	}
 
 	public boolean isDashBoardLoaded() {
@@ -45,11 +67,5 @@ public class LoginPage {
 		return alertbox.isDisplayed();
 	}
 
-	public boolean isAlertDisplayed1() {
-		return alertbox.isDisplayed();
-	}
-
-	public boolean isAlertDisplayed2() {
-		return alertbox.isDisplayed();
-	}
+	
 }

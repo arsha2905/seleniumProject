@@ -11,7 +11,7 @@ import utilities.ExcelUtility;
 
 public class ManageContactTest extends Base {
 	
-	@Test
+	@Test(description="Verify that user can create manage contact values successfully")    
 public void verifyThatUserCanCreateManageContactValuesSuccessfully() throws IOException {
 		String usernamevalue = ExcelUtility.getStringData(1, 0, "Login_Page");
 		String passwordvalue = ExcelUtility.getStringData(1, 1, "Login_Page");
@@ -32,7 +32,7 @@ public void verifyThatUserCanCreateManageContactValuesSuccessfully() throws IOEx
 		boolean isAlertMessageDisplayed = managecontact.isGreenAlertDisplayed();
 		Assert.assertTrue(isAlertMessageDisplayed);
 }
-	@Test
+	@Test(description=" Verify whether the update button is enabled")
 	public void verifyWhetherUpdateButtonIsEnabled() throws IOException {
 		String usernamevalue = ExcelUtility.getStringData(1, 0, "Login_Page");
 		String passwordvalue = ExcelUtility.getStringData(1, 1, "Login_Page");

@@ -1,5 +1,7 @@
 package pages;
 
+import java.awt.AWTException;
+
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -7,6 +9,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
+import constants.Constants;
+import utilities.FileUploadUtility;
 import utilities.PageUtilities;
 
 public class SubcategoryPage {
@@ -50,8 +54,11 @@ public class SubcategoryPage {
 		subCategory.sendKeys(scategory);
 	}
 
-	public void uploadImage() {
-		chooseFile.sendKeys("C:\\Users\\arsha\\OneDrive\\Desktop\\DummyBook.jpg");
+	public void uploadImage() throws AWTException {
+		PageUtilities pageutilities = new PageUtilities();
+		pageutilities.javaScriptExecutorTest(driver, chooseFile);
+		FileUploadUtility fileuploadutilityrobot=new FileUploadUtility();
+		fileuploadutilityrobot.fileUploadUsingRobotClass(chooseFile, Constants.BOOKIMAGE);
 	}
 	// public void javaScriptExecutorTest() {
 	// JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -61,10 +68,7 @@ public class SubcategoryPage {
 	public void clickTheSaveButton() {
 		PageUtilities pageutilities = new PageUtilities();
 		pageutilities.javaScriptExecutorTest(driver, saveButton);
-	}
-
-	public void clickSaveButton() {
-		saveButton.click();
+	
 
 	}
 

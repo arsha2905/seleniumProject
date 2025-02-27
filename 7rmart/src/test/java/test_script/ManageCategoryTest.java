@@ -2,6 +2,7 @@ package test_script;
 
 import java.io.IOException;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import pages.LoginPage;
@@ -9,7 +10,7 @@ import pages.ManageCategoryPage;
 import utilities.ExcelUtility;
 
 public class ManageCategoryTest extends Base{
-	@Test
+	@Test(retryAnalyzer = retry.Retry.class,description="Verify that user can delete category successfully")
 	public void verifyThatUserCanDeleteCategorySuccessfully() throws IOException {
 		String usernamevalue = ExcelUtility.getStringData(1, 0, "Login_Page");
 		String passwordvalue = ExcelUtility.getStringData(1, 1, "Login_Page");
@@ -21,10 +22,9 @@ public class ManageCategoryTest extends Base{
 		
 		ManageCategoryPage managecategory=new ManageCategoryPage(driver);
 		managecategory.clickTheManageCategoryInfo();
-		//managecategory.clickTheDeleteButton();
 		managecategory.confirmationAlert();
-		
-		managecategory.isGreenAlertDisplayed();
+		boolean isAlertMessageDisplayed = managecategory.isGreenAlertDisplayed();
+		Assert.assertTrue(isAlertMessageDisplayed);
+	}
 
-}
 }
