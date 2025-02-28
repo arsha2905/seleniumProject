@@ -39,7 +39,7 @@ public class AdminUserTest extends Base{
 		adminuserpage.dropDown();
 		adminuserpage.clickTheSaveButton();
 		boolean isAlertMessageDisplayed = adminuserpage.isGreenAlertDisplayed();
-		Assert.assertTrue(isAlertMessageDisplayed);
+		Assert.assertTrue(isAlertMessageDisplayed,"Success alert is not displaying");
 	}
 	@Test(dataProvider="LoginProvider",description="Verify whether the savebutton is displayed"  )
 	public void verifyWhetherSaveButtonIsDisplayed(String usernamevalue,String passwordvalue) throws IOException {
@@ -60,7 +60,7 @@ public class AdminUserTest extends Base{
 		//adminuserpage.isSaveButtonDisplayed();
 	
 		boolean isSaveButtonDisplayed = adminuserpage.isSaveButtonDisplayed();
-		Assert.assertTrue(isSaveButtonDisplayed);
+		Assert.assertTrue(isSaveButtonDisplayed,"Save button not displaying");
 }
 	
 	@DataProvider(name="LoginProvider")

@@ -32,7 +32,7 @@ public class SubcategoryTest extends Base{
 		category.uploadImage();
 		category.clickTheSaveButton();
 		boolean isAlertMessageDisplayed = category.isGreenAlertDisplayed();
-		Assert.assertTrue(isAlertMessageDisplayed);
+		Assert.assertTrue(isAlertMessageDisplayed,"Success alert is not displaying");
 		
 	}
 }

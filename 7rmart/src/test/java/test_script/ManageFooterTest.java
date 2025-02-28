@@ -31,7 +31,7 @@ public class ManageFooterTest extends Base {
 		manage.enterPhonenum(phonenum);
 		manage.clickUpdateButton();
 		boolean isAlertMessageDisplayed = manage.isGreenAlertDisplayed();
-		Assert.assertTrue(isAlertMessageDisplayed);
+		Assert.assertTrue(isAlertMessageDisplayed,"Success alert is not displaying");
 	}
 	
 	@Test(retryAnalyzer=retry.Retry.class,description="Verify whether update button is displayed")
@@ -48,7 +48,7 @@ public class ManageFooterTest extends Base {
 		manage.clickTheManageFooterInfo();
 		manage.clickTheManageFooterActionButton();
 		boolean isUpdateButtonDisplayed = manage.isUpdateButtonDisplayed();
-		Assert.assertTrue(isUpdateButtonDisplayed);
+		Assert.assertTrue(isUpdateButtonDisplayed,"Update button not displaying");
 	}
 
 }

@@ -24,7 +24,7 @@ public class ManageCategoryTest extends Base{
 		managecategory.clickTheManageCategoryInfo();
 		managecategory.confirmationAlert();
 		boolean isAlertMessageDisplayed = managecategory.isGreenAlertDisplayed();
-		Assert.assertTrue(isAlertMessageDisplayed);
+		Assert.assertTrue(isAlertMessageDisplayed,"Success alert is not displaying");
 	}
 
 }

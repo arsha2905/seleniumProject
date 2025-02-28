@@ -30,7 +30,7 @@ public void verifyThatUserCanCreateManageContactValuesSuccessfully() throws IOEx
 		managecontact.enterDeliveryTime(delivryTime);
 		managecontact.clickTheUpdateButton();
 		boolean isAlertMessageDisplayed = managecontact.isGreenAlertDisplayed();
-		Assert.assertTrue(isAlertMessageDisplayed);
+		Assert.assertTrue(isAlertMessageDisplayed,"Success alert is not displaying");
 }
 	@Test(description=" Verify whether the update button is enabled")
 	public void verifyWhetherUpdateButtonIsEnabled() throws IOException {
@@ -46,7 +46,7 @@ public void verifyThatUserCanCreateManageContactValuesSuccessfully() throws IOEx
 		managecontact.clickTheManageContactInfo();
 		managecontact.clickTheManageContactrActionButton();
 boolean isButtonEnabled = managecontact.isUpdateButtonEnabled();
-Assert.assertTrue(isButtonEnabled);
+Assert.assertTrue(isButtonEnabled,"Update button not enabled");
 	}
 	
 }

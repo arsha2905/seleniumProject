@@ -31,7 +31,7 @@ public class ManageNewsTest extends Base{
 		managenewspage.enterTheNews(news);
 		managenewspage.clickTheSaveButton();
 		boolean isAlertMessageDisplayed = managenewspage.isAlertDisplayed();
-		Assert.assertTrue(isAlertMessageDisplayed);
+		Assert.assertTrue(isAlertMessageDisplayed,"Success alert is not displaying");
 
 	}
 }

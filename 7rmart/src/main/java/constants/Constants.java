@@ -5,5 +5,6 @@ public static final String CONFIGFILE = System.getProperty("user.dir")+"\\src\\m
 
 public static final String BOOKIMAGE = System.getProperty("user.dir")+"\\src\\test\\resources\\DummyBook.jpg";
 
-public static final String VALIDCREDENTIALS="Home page is not loaded when user is entering invalid credentials";
+public static final String VALIDCREDENTIALS="Home page is not loaded when user is entering valid credentials";
+public static final String INVALIDCREDENTIALS="Alert is not displyed when user is entering invalid credentials";
 }
