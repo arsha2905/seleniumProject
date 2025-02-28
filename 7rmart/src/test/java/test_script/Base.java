@@ -46,6 +46,7 @@ public void initialBrowse(String browser) throws Exception  {
 	else {
 		throw new Exception("Browser is not correct");
 	}
+	//file upload
 	//driver.get("https://groceryapp.uniqassosiates.com/admin");
 	driver.get(properties.getProperty("url"));
 	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(WaitUtility.IMPLICITWAIT));// implicit wait
