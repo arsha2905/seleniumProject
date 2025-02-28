@@ -25,7 +25,7 @@ public void verifyThatUserCanAbleToLogoutSuccessfully() throws IOException {
 	 logout.clickTheAdminButton();
 	 logout.clickTheLogoutButton();
 	 boolean isloginDisplayed = logout.isLoginDisplayed();
-		Assert.assertTrue(isloginDisplayed,"Login page not displaying after user logout");
+		Assert.assertTrue(isloginDisplayed,"LOGINDISPLAY");
 	}
 	 
 		 

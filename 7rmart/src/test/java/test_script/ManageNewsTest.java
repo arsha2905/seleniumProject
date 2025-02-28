@@ -5,6 +5,7 @@ import java.io.IOException;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import constants.Constants;
 import pages.LoginPage;
 import pages.ManageNewsPage;
 import utilities.ExcelUtility;
@@ -31,7 +32,7 @@ public class ManageNewsTest extends Base{
 		managenewspage.enterTheNews(news);
 		managenewspage.clickTheSaveButton();
 		boolean isAlertMessageDisplayed = managenewspage.isAlertDisplayed();
-		Assert.assertTrue(isAlertMessageDisplayed,"Success alert is not displaying");
+		Assert.assertTrue(isAlertMessageDisplayed,Constants.SUCCESSMESSAGE);
 
 	}
 }

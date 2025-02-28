@@ -6,6 +6,7 @@ import java.io.IOException;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import constants.Constants;
 import pages.LoginPage;
 import pages.SubcategoryPage;
 import utilities.ExcelUtility;
@@ -32,7 +33,7 @@ public class SubcategoryTest extends Base{
 		category.uploadImage();
 		category.clickTheSaveButton();
 		boolean isAlertMessageDisplayed = category.isGreenAlertDisplayed();
-		Assert.assertTrue(isAlertMessageDisplayed,"Success alert is not displaying");
+		Assert.assertTrue(isAlertMessageDisplayed,Constants.SUCCESSMESSAGE);
 		
 	}
 }

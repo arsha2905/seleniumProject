@@ -5,6 +5,7 @@ import java.io.IOException;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import constants.Constants;
 import pages.LoginPage;
 import pages.ManageFooterPage;
 import utilities.ExcelUtility;
@@ -31,7 +32,7 @@ public class ManageFooterTest extends Base {
 		manage.enterPhonenum(phonenum);
 		manage.clickUpdateButton();
 		boolean isAlertMessageDisplayed = manage.isGreenAlertDisplayed();
-		Assert.assertTrue(isAlertMessageDisplayed,"Success alert is not displaying");
+		Assert.assertTrue(isAlertMessageDisplayed,Constants.SUCCESSMESSAGE);
 	}
 	
 	@Test(retryAnalyzer=retry.Retry.class,description="Verify whether update button is displayed")
@@ -48,7 +49,7 @@ public class ManageFooterTest extends Base {
 		manage.clickTheManageFooterInfo();
 		manage.clickTheManageFooterActionButton();
 		boolean isUpdateButtonDisplayed = manage.isUpdateButtonDisplayed();
-		Assert.assertTrue(isUpdateButtonDisplayed,"Update button not displaying");
+		Assert.assertTrue(isUpdateButtonDisplayed,Constants.UPDATEDISPLAY);
 	}
 
 }

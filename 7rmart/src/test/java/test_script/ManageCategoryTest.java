@@ -5,6 +5,7 @@ import java.io.IOException;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import constants.Constants;
 import pages.LoginPage;
 import pages.ManageCategoryPage;
 import utilities.ExcelUtility;
@@ -24,7 +25,7 @@ public class ManageCategoryTest extends Base{
 		managecategory.clickTheManageCategoryInfo();
 		managecategory.confirmationAlert();
 		boolean isAlertMessageDisplayed = managecategory.isGreenAlertDisplayed();
-		Assert.assertTrue(isAlertMessageDisplayed,"Success alert is not displaying");
+		Assert.assertTrue(isAlertMessageDisplayed,Constants.SUCCESSMESSAGE);
 	}
 
 }

@@ -5,6 +5,7 @@ import java.io.IOException;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import constants.Constants;
 import pages.LoginPage;
 import pages.ManageContactPage;
 import utilities.ExcelUtility;
@@ -30,7 +31,7 @@ public void verifyThatUserCanCreateManageContactValuesSuccessfully() throws IOEx
 		managecontact.enterDeliveryTime(delivryTime);
 		managecontact.clickTheUpdateButton();
 		boolean isAlertMessageDisplayed = managecontact.isGreenAlertDisplayed();
-		Assert.assertTrue(isAlertMessageDisplayed,"Success alert is not displaying");
+		Assert.assertTrue(isAlertMessageDisplayed,Constants.SUCCESSMESSAGE);
 }
 	@Test(description=" Verify whether the update button is enabled")
 	public void verifyWhetherUpdateButtonIsEnabled() throws IOException {
@@ -46,7 +47,7 @@ public void verifyThatUserCanCreateManageContactValuesSuccessfully() throws IOEx
 		managecontact.clickTheManageContactInfo();
 		managecontact.clickTheManageContactrActionButton();
 boolean isButtonEnabled = managecontact.isUpdateButtonEnabled();
-Assert.assertTrue(isButtonEnabled,"Update button not enabled");
+Assert.assertTrue(isButtonEnabled,Constants.BUTTONENABLE);
 	}
 	
 }

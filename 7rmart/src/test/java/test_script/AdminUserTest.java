@@ -6,6 +6,7 @@ import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import constants.Constants;
 import pages.AdminUserPage;
 import pages.LoginPage;
 import utilities.ExcelUtility;
@@ -39,7 +40,7 @@ public class AdminUserTest extends Base{
 		adminuserpage.dropDown();
 		adminuserpage.clickTheSaveButton();
 		boolean isAlertMessageDisplayed = adminuserpage.isGreenAlertDisplayed();
-		Assert.assertTrue(isAlertMessageDisplayed,"Success alert is not displaying");
+		Assert.assertTrue(isAlertMessageDisplayed,Constants.SUCCESSMESSAGE);
 	}
 	@Test(dataProvider="LoginProvider",description="Verify whether the savebutton is displayed"  )
 	public void verifyWhetherSaveButtonIsDisplayed(String usernamevalue,String passwordvalue) throws IOException {
@@ -60,7 +61,7 @@ public class AdminUserTest extends Base{
 		//adminuserpage.isSaveButtonDisplayed();
 	
 		boolean isSaveButtonDisplayed = adminuserpage.isSaveButtonDisplayed();
-		Assert.assertTrue(isSaveButtonDisplayed,"Save button not displaying");
+		Assert.assertTrue(isSaveButtonDisplayed,Constants.SAVEBUTTON);
 }
 	
 	@DataProvider(name="LoginProvider")
