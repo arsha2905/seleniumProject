@@ -21,4 +21,19 @@ public class WaitUtility {
 		wait.until(ExpectedConditions.visibilityOf(target));
 	
 	}
+	public void waitForFrameTobeAvailable(WebDriver driver, WebElement element) {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(EXPLICITWAIT));
+		wait.until(ExpectedConditions.elementSelectionStateToBe(element, true));
+	
+	}
+	public void waitReturnValue(WebDriver driver, WebElement element) {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(EXPLICITWAIT));
+		wait.until(ExpectedConditions.elementSelectionStateToBe(element, true));
+	
+	}
+	
+	public void waitForElementToGetSelected(WebDriver driver, WebElement element) {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(EXPLICITWAIT));
+		wait.until(ExpectedConditions.elementSelectionStateToBe(element, true));
+	}
 }
