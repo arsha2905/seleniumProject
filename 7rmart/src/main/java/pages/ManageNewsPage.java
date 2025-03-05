@@ -13,8 +13,8 @@ public class ManageNewsPage {
 		PageFactory.initElements(driver, this);
 	}
 
-//	@FindBy(xpath = "//a[@href='https://groceryapp.uniqassosiates.com/admin/list-news']")
-//	private WebElement newsmoreInfo;
+   //@FindBy(xpath = "//a[@href='https://groceryapp.uniqassosiates.com/admin/list-news']")
+   //private WebElement newsmoreInfo;
 	@FindBy(xpath = "//a[@class='btn btn-rounded btn-danger']")
 	private WebElement newButton;
 	@FindBy(xpath = "//textarea[@id='news']")

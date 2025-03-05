@@ -54,7 +54,7 @@ public class ManageContactPage {
 		return this;
 	}
 
-//public void javaScriptExecutorTest() {
+    //public void javaScriptExecutorTest() {
 	// JavascriptExecutor js = (JavascriptExecutor) driver;
 	// js.executeScript("arguments[0].click();", updateButton);
 	// }
