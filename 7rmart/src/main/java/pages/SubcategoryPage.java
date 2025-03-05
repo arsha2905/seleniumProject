@@ -21,8 +21,9 @@ public class SubcategoryPage {
 		PageFactory.initElements(driver, this);
 	}
 
-	@FindBy(xpath = "//a[@href='https://groceryapp.uniqassosiates.com/admin/list-sub-category'and@class='small-box-footer']")
-	private WebElement moreInfo;
+	// @FindBy(xpath =
+	// "//a[@href='https://groceryapp.uniqassosiates.com/admin/list-sub-category'and@class='small-box-footer']")
+	// private WebElement subcategorymoreInfo;
 	@FindBy(xpath = "//a[@onclick='click_button(1)']")
 	private WebElement newButton;
 	@FindBy(xpath = "//select[@class='form-control selectpicker']")
@@ -37,38 +38,42 @@ public class SubcategoryPage {
 	private WebElement alertMessage;
 
 	// "C:\Users\arsha\OneDrive\Desktop\DummyBook.jpg"
-	public void clickTheSubcategoryInfo() {
-		moreInfo.click();
-	}
+	/*
+	 * public void clickTheSubcategoryMoreInfo() { subcategorymoreInfo.click(); }
+	 */
 
-	public void clickTheSubcategoryNewButton() {
+	public SubcategoryPage clickTheSubcategoryNewButton() {
 		newButton.click();
+		return this;
 	}
 
-	public void enterCategory() {
+	public SubcategoryPage enterCategory() {
 		PageUtilities pageutilities = new PageUtilities();
 		pageutilities.selectByIndex(dropDown, 3);
+		return this;
 	}
 
-	public void enterSubcategory(String scategory) {
+	public SubcategoryPage enterSubcategory(String scategory) {
 		subCategory.sendKeys(scategory);
+		return this;
 	}
 
-	public void uploadImage() throws AWTException {
+	public SubcategoryPage uploadImage() throws AWTException {
 		PageUtilities pageutilities = new PageUtilities();
 		pageutilities.javaScriptExecutorTest(driver, chooseFile);
-		FileUploadUtility fileuploadutilityrobot=new FileUploadUtility();
+		FileUploadUtility fileuploadutilityrobot = new FileUploadUtility();
 		fileuploadutilityrobot.fileUploadUsingRobotClass(chooseFile, Constants.BOOKIMAGE);
+		return this;
 	}
 	// public void javaScriptExecutorTest() {
 	// JavascriptExecutor js = (JavascriptExecutor) driver;
 	// js.executeScript("arguments[0].click();", saveButton);
 	// }
 
-	public void clickTheSaveButton() {
+	public SubcategoryPage clickTheSaveButton() {
 		PageUtilities pageutilities = new PageUtilities();
 		pageutilities.javaScriptExecutorTest(driver, saveButton);
-	
+		return this;
 
 	}
 

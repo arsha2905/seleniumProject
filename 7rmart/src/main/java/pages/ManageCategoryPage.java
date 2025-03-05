@@ -14,21 +14,22 @@ public class ManageCategoryPage {
 		PageFactory.initElements(driver, this);
 	}
 
-	@FindBy(xpath = "//a[@href='https://groceryapp.uniqassosiates.com/admin/list-category'and@class='small-box-footer']")
-	private WebElement moreInfo;
+//	@FindBy(xpath = "//a[@href='https://groceryapp.uniqassosiates.com/admin/list-category'and@class='small-box-footer']")
+//	private WebElement categorymoreInfo;
 	@FindBy(xpath = "//a[@class='btn btn-sm btn btn-danger btncss']")
 	private WebElement deleteButton;
 	@FindBy(xpath = "//div[@class='alert alert-success alert-dismissible']")
 	private WebElement alertMessage;
 
-	public void clickTheManageCategoryInfo() {
-		moreInfo.click();
+	// public void clickTheManageCategoryMoreInfo() {
+	// categorymoreInfo.click();
 
-	}
+	// }
 
-	public void confirmationAlert() {
+	public ManageCategoryPage confirmationAlert() {
 		deleteButton.click();
 		driver.switchTo().alert().accept();
+		return this;
 	}
 
 	public boolean isGreenAlertDisplayed() {

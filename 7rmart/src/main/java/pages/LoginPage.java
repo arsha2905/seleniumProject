@@ -33,29 +33,32 @@ public class LoginPage {
 	@FindBy(xpath = "//div[@class='alert alert-danger alert-dismissible']")
 	private WebElement alertbox;
 
-	public void enterUsername(String usernamevalue) {
+	public LoginPage enterUsername(String usernamevalue) {
 		usernameField.sendKeys(usernamevalue);
+		return this;
 	}
 
-	public void enterPassword(String passwordvalue) {
+	public LoginPage enterPassword(String passwordvalue) {
 		password.sendKeys(passwordvalue);
+		return this;
 	}
 
-	public void clickOnSigninButton() {
-		//WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-		//wait.until(ExpectedConditions.elementToBeClickable(submit));//explicit wait
-		//submit.click();
-		
-		//Wait<WebDriver> fluentWait = new FluentWait<WebDriver>(driver)
-		//.withTimeout(Duration.ofSeconds(30))
-		//		.pollingEvery(Duration.ofSeconds(5))
-		//		.ignoring(NoSuchElementException.class);
-		//		fluentWait.until(ExpectedConditions.elementToBeClickable(submit));//Webelementname=submit
-		//		submit.click();//fluent wait
-		
-		 WaitUtility waitutility=new  WaitUtility();
-		 waitutility.waitForClick(driver, submit);
-		 submit.click();
+	public LogoutPage clickOnSigninButton() {
+		// WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		// wait.until(ExpectedConditions.elementToBeClickable(submit));//explicit wait
+		// submit.click();
+
+		// Wait<WebDriver> fluentWait = new FluentWait<WebDriver>(driver)
+		// .withTimeout(Duration.ofSeconds(30))
+		// .pollingEvery(Duration.ofSeconds(5))
+		// .ignoring(NoSuchElementException.class);
+		// fluentWait.until(ExpectedConditions.elementToBeClickable(submit));//Webelementname=submit
+		// submit.click();//fluent wait
+
+		WaitUtility waitutility = new WaitUtility();
+		waitutility.waitForClick(driver, submit);
+		submit.click();
+		return new LogoutPage(driver);
 	}
 
 	public boolean isDashBoardLoaded() {
@@ -67,5 +70,4 @@ public class LoginPage {
 		return alertbox.isDisplayed();
 	}
 
-	
 }

@@ -13,8 +13,8 @@ public class ManageNewsPage {
 		PageFactory.initElements(driver, this);
 	}
 
-	@FindBy(xpath = "//a[@href='https://groceryapp.uniqassosiates.com/admin/list-news']")
-	private WebElement moreInfo;
+//	@FindBy(xpath = "//a[@href='https://groceryapp.uniqassosiates.com/admin/list-news']")
+//	private WebElement newsmoreInfo;
 	@FindBy(xpath = "//a[@class='btn btn-rounded btn-danger']")
 	private WebElement newButton;
 	@FindBy(xpath = "//textarea[@id='news']")
@@ -24,20 +24,23 @@ public class ManageNewsPage {
 	@FindBy(xpath = "//div[@class='alert alert-success alert-dismissible']")
 	private WebElement alertbox;
 
-	public void clickTheManageNewsInfo() {
-		moreInfo.click();
-	}
+	// public void clickTheManageNewsMoreInfo() {
+	// newsmoreInfo.click();
+	// }
 
-	public void clickTheManageNewsNewButton() {
+	public ManageNewsPage clickTheManageNewsNewButton() {
 		newButton.click();
+		return this;
 	}
 
-	public void enterTheNews(String news) {
+	public ManageNewsPage enterTheNews(String news) {
 		enterNews.sendKeys(news);
+		return this;
 	}
 
-	public void clickTheSaveButton() {
+	public ManageNewsPage clickTheSaveButton() {
 		saveButton.click();
+		return this;
 	}
 
 	public boolean isAlertDisplayed() {

@@ -18,8 +18,9 @@ public class ManageContactPage {
 		PageFactory.initElements(driver, this);
 	}
 
-	@FindBy(xpath = "//a[@href='https://groceryapp.uniqassosiates.com/admin/list-contact'and@class='small-box-footer']")
-	private WebElement moreInfo;
+	// @FindBy(xpath =
+	// "//a[@href='https://groceryapp.uniqassosiates.com/admin/list-contact'and@class='small-box-footer']")
+	// private WebElement mcontactmoreInfo;
 	@FindBy(xpath = "//i[@class='fas fa-edit']")
 	private WebElement action;
 	@FindBy(xpath = "//input[@id='phone']")
@@ -31,33 +32,37 @@ public class ManageContactPage {
 	@FindBy(xpath = "//div[@class='alert alert-success alert-dismissible']")
 	private WebElement alertMessage;
 
-	public void clickTheManageContactInfo() {
-		moreInfo.click();
-	}
+	// public ManageContactPage clickTheManageContactMoreInfo() {
+	// mcontactmoreInfo.click();
+	// return this;
+	// }
 
-	public void clickTheManageContactrActionButton() {
+	public ManageContactPage clickTheManageContactrActionButton() {
 		action.click();
+		return this;
 	}
 
-	public void enterPhonenum(String phonenum) {
+	public ManageContactPage enterPhonenum(String phonenum) {
 		phnumber.clear();
 		phnumber.sendKeys(phonenum);
+		return this;
 	}
 
-	public void enterDeliveryTime(String time) {
+	public ManageContactPage enterDeliveryTime(String time) {
 		deliveryTime.clear();
 		deliveryTime.sendKeys(time);
+		return this;
 	}
 
 //public void javaScriptExecutorTest() {
-	//	JavascriptExecutor js = (JavascriptExecutor) driver;
-		//js.executeScript("arguments[0].click();", updateButton);
-	//}
-	 public void clickTheUpdateButton() {
-	 PageUtilities pageutilities = new PageUtilities();
-	 pageutilities.javaScriptExecutorTest(driver,updateButton);
-	 }
-	
+	// JavascriptExecutor js = (JavascriptExecutor) driver;
+	// js.executeScript("arguments[0].click();", updateButton);
+	// }
+	public ManageContactPage clickTheUpdateButton() {
+		PageUtilities pageutilities = new PageUtilities();
+		pageutilities.javaScriptExecutorTest(driver, updateButton);
+		return this;
+	}
 
 	public boolean isGreenAlertDisplayed() {
 		return alertMessage.isDisplayed();
